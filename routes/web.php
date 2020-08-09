@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
 
 //Endpoint Admin ========================================================================
 $router->post("/admin/masuk", "AdminController@masuk");
-$router->get("/admin/getprofil", "AdminController@profil");
+$router->get("/admin/getprofil/{id_admin}", "AdminController@profil");
 //Kelola Petugas
 $router->get("/admin/getsemuapetugas", "AdminController@getsemuapetugas");
 $router->get("/admin/getpetugas/{id_petugas}", "AdminController@getpetugas");
@@ -38,25 +38,25 @@ $router->get("/admin/getrekaplayanan/{id_rekaplayanan}", "AdminController@getrek
 $router->get("/admin/hapussemuarekaplayanan", "AdminController@hapussemuarekaplayanan");
 $router->post("/admin/gantinohp/{id_admin}", "AdminController@gantinohp");
 $router->post("/admin/gantipassword/{id_admin}", "AdminController@gantipassword");
-$router->post("/admin/keluar", "AdminController@keluar");
+$router->post("/admin/keluar/{id_admin}", "AdminController@keluar");
 //Endpoint Admin ========================================================================
 
 //Endpoint Petugas ======================================================================
 $router->post("/petugas/masuk", "PetugasController@masuk");
-$router->get("/petugas/getprofil", "PetugasController@profil");
+$router->get("/petugas/getprofil/{id_petugas}", "PetugasController@profil");
 $router->post("/petugas/gantistatus/{id_petugas}", "PetugasController@gantistatus");
 $router->post("/petugas/gantinohp/{id_petugas}", "PetugasController@gantinohp");
 $router->post("/petugas/gantipassword/{id_petugas}", "PetugasController@gantipassword");
-$router->post("/petugas/keluar", "PetugasController@keluar");
+$router->post("/petugas/keluar/{id_petugas}", "PetugasController@keluar");
 //Endpoint Petugas ======================================================================
 
 //Endpoint Pengguna =====================================================================
 $router->post("/pengguna/masuk", "PenggunaController@masuk");
 $router->post("/pengguna/daftar", "PenggunaController@daftar");
-$router->get("/pengguna/getprofil", "PenggunaController@profil");
+$router->get("/pengguna/getprofil/{id_pengguna}", "PenggunaController@profil");
 $router->get("/pengguna/getsemuapetugas", "PenggunaController@getsemuapetugas");
 $router->get("/pengguna/getpetugas/{id_petugas}", "PenggunaController@getpetugas");
 $router->post("/pengguna/gantinohp/{id_pengguna}", "PenggunaController@gantinohp");
 $router->post("/pengguna/gantipassword/{id_pengguna}", "PenggunaController@gantipassword"); 
-$router->post("/pengguna/keluar", "PenggunaController@keluar");
+$router->post("/pengguna/keluar/{id_pengguna}", "PenggunaController@keluar");
 //Endpoint Pengguna =====================================================================
